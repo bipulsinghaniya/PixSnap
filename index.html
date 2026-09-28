@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixSnap | Task 02 Gallery</title>
+    <meta name="description"
+        content="PixSnap – a slick photo slideshow gallery with upload preview and fullscreen viewer." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ── SIDEBAR NAV ── -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <span class="brand-icon">⚡</span>
+            <span class="brand-name">PixSnap</span>
+        </div>
+
+        <nav class="side-nav">
+            <button class="nav-item active" data-view="gallery" id="navGallery">
+                <span class="nav-icon">🖼</span><span>Gallery</span>
+            </button>
+            <button class="nav-item" data-view="slideshow" id="navSlide">
+                <span class="nav-icon">▶</span><span>Slideshow</span>
+            </button>
+            <button class="nav-item" data-view="upload" id="navUpload">
+                <span class="nav-icon">⬆</span><span>Upload</span>
+            </button>
+            <button class="nav-item" data-view="favorites" id="navFav">
+                <span class="nav-icon">💜</span><span>Favorites</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="theme-toggle" id="themeToggle" title="Toggle theme">
+                <span id="themeIcon">🌙</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ── MAIN ── -->
+    <div class="main-wrap">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <button class="hamburger" id="hamburger">☰</button>
+            <div class="topbar-title" id="viewTitle">Gallery</div>
+            <div class="topbar-right">
+                <input type="text" id="searchInput" placeholder="Search…" class="top-search" />
+                <div class="avatar">PS</div>
+            </div>
+        </header>
+
+        <!-- ══ VIEW: GALLERY ══ -->
+        <section class="view active" id="viewGallery">
+            <div class="section-header">
+                <h2>All Photos <span class="badge" id="galleryCount">0</span></h2>
+                <div class="sort-row">
+                    <select id="sortSelect">
+                        <option value="default">Default</option>
+                        <option value="az">A → Z</option>
+                        <option value="za">Z → A</option>
+                        <option value="liked">Liked First</option>
+                    </select>
+                    <div class="view-toggle">
+                        <button class="vt-btn active" id="gridBtn" title="Grid">⊞</button>
+                        <button class="vt-btn" id="listBtn" title="List">☰</button>
+                    </div>
+                </div>
+            </div>
+            <div class="photo-grid" id="photoGrid"></div>
+        </section>
+
+        <!-- ══ VIEW: SLIDESHOW ══ -->
+        <section class="view" id="viewSlideshow">
+            <div class="slideshow-wrap">
+                <div class="slide-stage">
+                    <button class="slide-arrow left" id="slidePrev">&#8249;</button>
+                    <div class="slide-img-wrap">
+                        <img id="slideImg" src="" alt="" class="slide-img" />
+                        <div class="slide-caption" id="slideCaption"></div>
+                        <div class="slide-progress" id="slideProgress"></div>
+                    </div>
+                    <button class="slide-arrow right" id="slideNext">&#8250;</button>
+                </div>
+                <div class="slide-controls">
+                    <button class="ctrl-btn" id="slidePlayBtn">⏵ Play</button>
+                    <input type="range" id="speedRange" min="1" max="10" value="4" title="Speed" />
+                    <span class="ctrl-label">Speed</span>
+                    <button class="ctrl-btn" id="slideFsBtn">⛶ Fullscreen</button>
+                </div>
+                <div class="thumb-strip" id="thumbStrip"></div>
+            </div>
+        </section>
+
+        <!-- ══ VIEW: UPLOAD ══ -->
+        <section class="view" id="viewUpload">
+            <div class="upload-box" id="dropZone">
+                <div class="upload-icon">📤</div>
+                <p>Drag &amp; drop images here</p>
+                <small>or</small>
+                <label class="upload-label" for="fileInput">Browse Files</label>
+                <input type="file" id="fileInput" accept="image/*" multiple hidden />
+            </div>
+            <div class="preview-grid" id="previewGrid"></div>
+        </section>
+
+        <!-- ══ VIEW: FAVORITES ══ -->
+        <section class="view" id="viewFavorites">
+            <div class="section-header">
+                <h2>Favorites <span class="badge" id="favCount">0</span></h2>
+            </div>
+            <div class="photo-grid" id="favGrid"></div>
+            <div class="empty-msg" id="favEmpty" hidden>
+                <span>💜 Like some photos to see them here!</span>
+            </div>
+        </section>
+
+    </div><!-- /main-wrap -->
+
+    <!-- ── LIGHTBOX ── -->
+    <div class="lightbox" id="lightbox">
+        <button class="lb-close" id="lbClose">✕</button>
+        <button class="lb-nav lb-prev" id="lbPrev">&#8249;</button>
+        <div class="lb-inner">
+            <img id="lbImg" src="" alt="" />
+            <div class="lb-meta">
+                <h3 id="lbTitle"></h3>
+                <p id="lbSub"></p>
+                <button class="lb-like" id="lbLike">🤍 Like</button>
+            </div>
+        </div>
+        <button class="lb-nav lb-next" id="lbNext">&#8250;</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
