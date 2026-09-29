@@ -1,64 +1,105 @@
-# PixSnap
+# ⚡ PixSnap
 
-PixSnap is a modern photo gallery web app with a sleek dashboard, image search, favorites, slideshow mode, and upload preview functionality.
+A slick, feature-rich photo gallery progressive web app with a sidebar layout, slideshow player, drag-and-drop upload, favorites collection, fullscreen viewer, and dark/light theme toggle — all in pure HTML, CSS & JavaScript.
 
-## Features
+![PixSnap Preview](image.png)
 
-- Responsive gallery layout
-- Search photos by title or category
-- Sort photos by default, A–Z, Z–A, or likes
-- Grid/list view toggle
-- Favorite photos with local storage persistence
-- Slideshow with play/pause, navigation, and fullscreen support
-- Drag-and-drop image upload preview
-- Lightbox modal for full-size viewing
-- Light and dark theme toggle
+---
 
-## Tech Stack
+## ✨ Features
 
-- HTML5
-- CSS3
-- JavaScript
+### 🖼️ Gallery View
+- Responsive **Grid & List** layout toggle
+- **Sort** photos by Default, A→Z, Z→A, or Liked First
+- Live **search** bar in the top navigation
+- Like / unlike photos with a 💜 button
+- Open any photo in a **full-screen lightbox** with next/prev navigation
 
-## Project Structure
+### ▶️ Slideshow View
+- Animated automatic slideshow with **Play / Pause** control
+- Adjustable **speed slider** (1×–10×)
+- **Thumbnail strip** for quick jumping between slides
+- **Fullscreen** mode via the browser Fullscreen API
 
-- `index.html` — app structure and HTML layout
-- `style.css` — styling and responsive design
-- `app.js` — gallery logic, slideshow, favorites, upload, and theme behavior
+### ⬆️ Upload View
+- **Drag & drop** images directly onto the drop zone
+- Or use **Browse Files** to pick from your device
+- Instant preview grid of all uploaded images
+- Uploaded images appear in the Gallery and Slideshow
 
-## Run Locally
+### 💜 Favorites View
+- Dedicated page showing only **liked photos**
+- Empty-state message when no photos are liked yet
 
-You can open the app directly in a browser by launching `index.html`, or use a local web server for a smoother experience.
+### 🎨 Theme Toggle
+- One-click **dark ↔ light mode** switch in the sidebar footer
 
-### Option 1: Open directly
+---
 
-- Double-click `index.html` in your file explorer, or
-- Open it through your browser's "Open File" option.
+## 🛠️ Tech Stack
 
-### Option 2: Use a local server
+| Technology | Purpose |
+|---|---|
+| HTML5 | Page structure & multi-view layout |
+| CSS3 | Glassmorphism, sidebar, animations |
+| Vanilla JavaScript (ES6+) | All app logic — views, slideshow, upload, favorites |
+| Google Fonts (Syne + Inter) | Premium typography |
 
-From the project folder, run:
+> Zero dependencies. No build step. Open `index.html` and go.
+
+---
+
+## 🚀 Getting Started
 
 ```bash
-python -m http.server 8000
+# 1. Clone or download the project
+git clone <your-repo-url>
+
+# 2. Open in your browser — no server required
+start index.html      # Windows
+open index.html       # macOS
 ```
 
-Then open:
+---
 
-```text
-http://localhost:8000
+## 📁 Project Structure
+
+```
+PixSnap/
+├── index.html      ← Full app layout (sidebar + 4 views + lightbox)
+├── style.css       ← Sidebar, grid, slideshow, lightbox & theme styles
+├── app.js          ← All app logic (gallery, slideshow, upload, favorites)
+└── image.png       ← Preview / placeholder image
 ```
 
-## Live Demo
+---
 
-Add your live deployment link here:
+## 🎮 How to Use
 
-[Paste your live link here](https://iridescent-pothos-ae59f6.netlify.app/)
+| Action | How |
+|---|---|
+| Switch views | Click icons in the left sidebar |
+| Search photos | Type in the top search bar |
+| Like a photo | Click 💜 on the photo card or inside the lightbox |
+| Start slideshow | Go to Slideshow view → click ⏵ Play |
+| Change speed | Drag the speed slider in Slideshow view |
+| Upload photos | Go to Upload view → drag & drop or Browse Files |
+| See favorites | Go to Favorites view |
+| Toggle theme | Click the moon/sun icon at the bottom of the sidebar |
+| Mobile menu | Tap the ☰ hamburger icon to open the sidebar |
 
-## Screenshot
+---
 
-You can add a screenshot here later if needed.
+## 🌐 Live Demo
 
-## Author
+> 🔗 **[Add your deployment link here]**
 
-SkillCraft Project 02
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).
+
+---
+
+<p align="center">Made with ⚡ · PixSnap © 2026</p>
